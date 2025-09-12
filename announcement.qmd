@@ -1,0 +1,171 @@
+# Spatial Data Analysis and Econometrics with PySAL
+
+Luc Anselin, Elijah Knaap, and Sergio J. Rey
+
+North American Regional Science Council 2025
+
+## Description
+
+A unique feature of this tutorial is the use of Python based software
+tools for spatial data analysis and spatial econometrics. Python is an
+object-oriented scripting language that is gaining rapid adoption in the
+computational sciences. Since its initial release in July 2010, PySAL
+has been downloaded over 1.7 million times. This two-part tutorial will
+first provide participants with an introduction to Python and related
+tools for exploratory spatial data analysis. In the second part of the
+tutorial the focus is on spatial econometric methods in PySAL.
+
+## Instructors
+
+**Luc Anselin** is Stein-Freiler Distinguished Service Professor and Founding
+Director of the Center for Spatial Data Science at the University of Chicago. He
+previously held appointments at Arizona State University, the University of
+Illinois, Urbana-Champaign, the University of California, Santa Barbara, and The
+Ohio State University, among others. He holds a PhD in Regional Science from
+Cornell University. Anselin developed the original SpaceStat software for
+spatial data analysis in the early 1990s, and leads the GeoDa software
+project for spatial data science. He also was a co-founder of the PySAL project.
+
+His 1988 Spatial Econometrics text has been cited more than 16,000 times. His
+research has been recognized by a number of awards, including the Walter Isard
+and Alonso prizes of NARSC, and the Tobler award of the Austrian Academy of
+Sciences. He is a Fellow of RSAI, member of the National Academy of Sciences and
+of the American Academy of Arts and Sciences.
+
+
+**Elijah Knaap** is Assistant Professor of Urban Planning and Public Policy at
+UC Irvine. He holds a PhD in Urban Studies and Planning from the University of
+Maryland and serves currently as councillor-at-large for the North American
+Regional Science Council and Secretary of the Northeastern Regional Science
+Association, as well as an editorial board member of *Growth and Change* and
+*Reaching Regions*.
+
+Knaap is a core developer for the PySAL and QuantEcon open-source software
+ecosystems, and leads the development of the GeoSNAP package for neighborhood
+analysis. His research interests include spatial data science, spatial
+econometrics, urban spatial structure, and land-use/transportation modeling,
+particularly applied to questions of fair housing, education, and health policy,
+housing markets, and land-use regulation. His book "Urban Analysis and Spatial
+Science" is scheduled for publication later this year.
+
+**Sergio J. Rey** is Professor of Geography and Founding director of the Center
+for Open Geographical Science at San Diego State University. Prior to joining
+SDSU, he held professor and director positions at the University of California
+Riverside and Arizona State University. He is a Fellow of the Spatial
+Econometrics Association, the Regional Science Association International, and
+the recipient of the 2016 University Consortium of Geographical Information
+Science Research Award.
+
+Rey is project director for PySAL and the creator of the open source
+package STARS: Space-Time Analysis of Regional Systems. His research
+interests are in the area of geocomputation, exploratory space-time data
+analysis, spatial econometrics and urban/regional modeling with
+substantive applications to problems in regional economics, criminology,
+epidemiology, spatial demography and urban dynamics, among others. Rey
+has served as editor of the International Regional Science Review
+(1999-2015), editor of Geographical Analysis (2014-17) and as an
+editorial board member of Computers, Environment and Urban systems,
+Geographical Analysis, Papers in Regional Science, Professional
+Geographer, Region et Devloppement, and Spatial Demography.
+
+## Format
+
+The tutorial is planned for a full day, broken into two half-day
+sessions. Each session is organized into two 80-minute components
+separated by a 20 minute break.
+
+## Objectives
+
+This tutorial will offer participants the following:
+
+- Introduction to Python for spatial data and regional analysis
+- Introduction to PySAL for exploratory spatial data analysis
+- Introduction the PySAL for spatial econometric modeling
+
+## Outline
+
+AM Session (9-12)
+
+1. Software and Tools Installation (30 min)
+    - Anaconda Python Distribution
+    - IPython/Jupyter Notebooks
+2. PySAL for ESDA (80 min)
+   - PySAL Overview and Setup (20 min)
+   - Spatial data processing with PySAL (30 min)
+     - Processing spatial data with PySAL
+     - Spatial weights in PySAL
+   - ESDA with PySAL (30 min)
+     - Global spatial autocorrelation analysis
+     - Local spatial autocorrelation analysis
+3. PySAL for Regional Analysis (60 min)
+   - Regionalization (20 minutes)
+     - Clustering
+     - Spatially constrained clustering
+   - Segregation (20 min)
+     - segregation measures
+     - comparative segregation analysis
+   - Neighborhood Analytics
+     - GeoSNAP
+     - neighborhood delineation & data harmonization
+     - neighborhood change
+
+PM Session (1:30-4:30)
+
+1. Introduction to spatial econometrics in PySAL (20 min)
+   - Overview of functionality in spreg
+     - cross-sectional models
+     - spatial regimes
+     - spatial panel data
+   - Logic of spatial econometric analysis in spreg
+     - spatial weights
+     - model specification
+     - estimation
+     - diagnostics
+2. Classic cross-sectional spatial regression - 1 (60 min)
+   - OLS with spatial diagnostics
+   - Spatial lag and spatial error model
+     - ML estimation
+     - IV/GMM estimationBreak (20 min)
+3. Classic cross-sectional spatial regression - 2 (30 min)
+    - Spatial Durbin and SLX model
+    - Direct and indirect effects
+    - Spatial probit
+4. Spatial regimes (30 min)
+   - Exogenous regimes
+   - Endogenous regimes
+5. Spatial panels using SUR (20 min)
+   - Classic SUR models
+   - Spatial lag and spatial error SUR models
+
+## Audience
+
+Regional scientists, GIScientists, researchers and students interested
+in learning Python and using PySAL for computational scripting in
+spatial analysis and spatial econometrics.
+
+## Prerequisites
+
+This tutorial is geared towards participants who have a basic
+understanding of exploratory spatial data analysis and econometrics.
+Background materials will be sent to participants prior to the workshop.
+
+
+## Required Materials
+
+- The tutorial will consist of computationally-based instruction.
+This will include basic scientific scripting with Python and an
+introduction to PySAL.
+- Participants are encouraged to bring their own laptops. We will
+cover installation of all required software in the morning
+session.
+
+## Software Requirements
+
+Software will be made available on site.
+
+- Sample data sets will be provided with the packages.
+- Workshop repository: https://github.com/knaaptime/workshop-pysal-narsc25
+
+## Expected Number of Participants
+
+We have taught similar workshops to audiences of up to 75.
