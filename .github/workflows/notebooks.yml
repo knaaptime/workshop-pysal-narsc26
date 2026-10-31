@@ -1,0 +1,49 @@
+name: notebooks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  notebooks:
+    name: notebooks (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-version: latest
+          environment-file: environment.yml
+          activate-environment: workshop-pysal-narsc26
+
+      - name: Show the environment
+        run: conda list
+
+      - name: Execute the notebooks and their solutions
+        run: python .github/scripts/execute_notebooks.py
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: executed-${{ matrix.os }}
+          path: executed/
+
+  codespaces:
+    name: Codespaces image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the dev container image
+        run: docker build -f .devcontainer/Dockerfile .
