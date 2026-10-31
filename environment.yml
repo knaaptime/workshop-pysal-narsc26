@@ -1,30 +1,45 @@
-name: workshop-pysal-wrsa24
+name: workshop-pysal-narsc26
 channels:
   - conda-forge
-  - defaults
 dependencies:
-  - python ==3.11
-  - mamba
-  - bokeh
+  - python=3.14
   - pip
-  - geopandas
-  - descartes
+  # spatial data science
+  - contextily
+  - esda
   - folium
-  - ipywidgets
-  - jupyterlab
-  - pysal
-  - nbconvert
-  - numpy <= 1.24
-  - numba == 0.57
+  - geopandas
+  - geoviews
+  - giddy
+  - hvplot
+  - libpysal>=4.15
+  - mapclassify
+  - matplotlib
   - networkx
+  - pyarrow
   - scikit-learn
   - seaborn
-  - statsmodels
-  - hvplot
-  - holoviews
-  - geoviews
+  - segregation
+  - shapely
+  - splot
+  - spopt
+  # bayesian spatial econometrics; suitesparse comes from conda-forge
+  - arviz
+  - formulaic
+  - lazy_loader
+  - polyagamma
+  - pymc>=6.3
+  - python-graphviz
+  - scikit-sparse>=0.5
+  - suitesparse
+  # notebooks
+  - ipywidgets
+  - jupyterlab
+  - nbconvert
   - watermark
-  - rasterio
-  - contextily
-  - geosnap
-  - scipy <= 1.11
+  - pip:
+      - jax
+      - sparsax
+      - augax
+      # pinned to neighbayes==0.1.0 at release
+      - neighbayes @ git+https://github.com/knaaptime/neighbayes@glossary-renames

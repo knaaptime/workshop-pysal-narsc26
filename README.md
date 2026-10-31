@@ -1,10 +1,10 @@
-# workshop-pysal-narsc25
+# workshop-pysal-narsc26
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/knaaptime/workshop-pysal-narsc25)
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/knaaptime/workshop-pysal-narsc25/main?urlpath=lab)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/knaaptime/workshop-pysal-narsc26)
 
 Spatial Analysis and Econometrics with PySAL
+
+North American Regional Science Council, Philadelphia, November 11, 2026
 
 <p align="center">
 <img height=260 src='docs/figs/pysal_logo.png' >
@@ -12,49 +12,46 @@ Spatial Analysis and Econometrics with PySAL
 
 ### Instructors
 
-* Luc Anselin
-* Eli Knaap - San Diego State University
+* Eli Knaap - University of California, Irvine
 * Serge Rey - San Diego State University
 
 ---
 
 ## Schedule
 
-### Part 1
+### Morning (9:00 to 12:00)
 
 1. Spatial Data Analysis
-* geoprocessing & visualization
-* spatial weights
-* spatial autocorrelation
+   * geoprocessing and visualization (`00_geoprocessing`, `01_geovisualization`)
+   * spatial graphs (`02_spatial_weights`, `03_weights_disparities`)
+   * spatial autocorrelation (`04_spatial_autocorrelation`)
 
 2. Spatial Segmentation
+   * geodemographic analysis and regionalization (`05_geodemographic_analysis`)
+   * segregation analysis (`06_segregation_analysis`)
 
-* geodemographic analysis
-* segregation analysis
+### Afternoon (1:30 to 4:30)
 
-### Break
+3. Bayesian Spatial Econometrics with `neighbayes`
+   * the logic of a Bayesian spatial regression (`07_bayesian_spatial_econometrics`)
+   * OLS with spatial diagnostics; the spatial lag and spatial error models (`08_lag_and_error_models`)
+   * break
+   * the spatial Durbin and SLX models; direct and indirect effects (`09_durbin_models_and_effects`)
+   * spatial probit, logit, and negative binomial models (`10_non_gaussian_outcomes`)
+   * spatial panels (`11_spatial_panels`)
 
-### Part 2
-
-3. Spatial Econometrics
-
-* cross sectional models
-* spatial regime models
-* spatial SUR models
+All notebooks live in `content/`.
 
 ## Getting Started
 
-__To get started immediately without installing or downloading anything, click [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sjsrey/workshop-pysal-wrsa24/main?urlpath=lab)__
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/sjsrey/workshop-pysal-wrsa24)
-
-
-If you are familiar with GitHub, you should clone or fork this GitHub repository to a specific directory. Cloning can be done by:
+Clone the repository:
 
 ```bash
-git clone https://github.com/knaaptime/workshop-pysal-narsc25.git
+git clone https://github.com/knaaptime/workshop-pysal-narsc26.git
 ```
 
-If you are not using git, you can grab the workshop materials as a zip file by pointing your browser to (<https://github.comknaaptime/workshop-pysal-narsc25.git>) and clicking on the green _Clone or download_ button in the upper right. Extract the downloaded zip file to a working directory.
+If you do not use git, download the materials as a zip file from the green Code button at <https://github.com/knaaptime/workshop-pysal-narsc26> and extract it to a working directory.
 
-See the [installation instructions](installation.md) for more information on getting a python environment setup
+Then build the workshop environment by following the [installation instructions](docs/installation.md). The environment requires conda; a pip-only install will not work.
+
+If your computer cannot build the environment (an Intel Mac, a Mac running macOS 14 or older, or a locked-down machine), open the materials in a browser instead with the Codespaces button at the top of this page. Codespaces runs the same environment on a GitHub server and needs only a free GitHub account.
