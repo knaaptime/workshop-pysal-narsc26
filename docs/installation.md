@@ -1,47 +1,61 @@
 ## Installation
 
-We will be using a number of Python packages for geospatial analysis.
+The workshop runs in a single conda environment that holds every package both sessions use. Please build it before the workshop: it downloads a little under 3 GB, and building it takes 10 to 15 minutes on a good connection, longer on conference wifi.
 
-An easy way to install all of these packages is to use a Python distribution such as [Anaconda](https://www.anaconda.com/download/#macos). In this workshop we will use anaconda to build an [environment](https://conda.io/docs/user-guide/tasks/manage-environments.html) for **Python**. It does not matter which version of anaconda is downloaded as long as it is greater than 3.5. 
+### Which computers work
 
-![anaconda](figs/readmefigs/anaconda.png)
+The environment builds on Windows (64-bit), on Linux, and on Macs with Apple silicon running macOS 15 or newer. On an Intel Mac, or a Mac running macOS 14 or older, two of the packages have no prebuilt version; use [Codespaces](#codespaces) instead.
 
-On windows, all our work will begin from an anaconda prompt, which you can start as follows:
+The environment needs conda. A pip-only installation will not work, because one of the packages depends on a compiled library (SuiteSparse) that conda supplies.
 
-![anacondaprompt](figs/readmefigs/anacondastartwin.png)
+### Building the environment
 
-Start a terminal and navigate to the directory of the downloaded/ cloned materials. For example, if the materials now live in the directory `/Users/knaaptime/Downloads/workshop-pysal-narsc23` , you need to navigate to that directory from the terminal (using command `cd` ):
+1. Install [Miniforge](https://conda-forge.org/download/), a small conda installer that uses the conda-forge channel. If you already have Anaconda or Miniconda, it will work too; the environment file does not use Anaconda's default channel.
 
-![directory](figs/readmefigs/directory.png)
+2. Get the workshop materials, either with git,
 
-Once we have done that, run:
+   ```bash
+   git clone https://github.com/knaaptime/workshop-pysal-narsc26.git
+   ```
 
-``` bash
-conda-env create -f environment.yml
+   or by downloading the zip file from the green Code button at <https://github.com/knaaptime/workshop-pysal-narsc26> and extracting it.
+
+3. Open a terminal (on Windows, the Miniforge Prompt from the Start menu), move into the materials folder, and build the environment:
+
+   ```bash
+   cd workshop-pysal-narsc26
+   conda env create -f environment.yml
+   ```
+
+4. Activate the environment and start JupyterLab:
+
+   ```bash
+   conda activate workshop-pysal-narsc26
+   jupyter lab
+   ```
+
+5. In JupyterLab, open `content/check.ipynb` and run every cell. If the last cell prints a small table, the environment is ready.
+
+If you built the environment some time ago, update it to the current version of the materials with
+
+```bash
+conda env update -f environment.yml --prune
 ```
 
-This will build a conda python 3.10 environment that sandboxes the installation of the required packages for this workshop so we don't break anything in your computer's system Python (if it has one).
+### Codespaces
 
-This may take 10-15 minutes to complete depending on the speed of your network connection.
+If your computer cannot build the environment, open the materials in a browser with the Open in GitHub Codespaces button in the [README](../README.md). Codespaces runs the same environment on a GitHub server and needs only a free GitHub account. The first launch builds the environment, which takes several minutes, so start it before the session begins.
 
-Once this completes, you can activate the workshop environment with:
+### Troubleshooting
 
-``` bash
-conda activate workshop-pysal-narsc23
-```
+If JupyterLab fails to start on Windows with
 
-You're now all setup for the tutorial!
-
-## Troubleshooting
-
-If you encounter the following error when starting jupyterlab:
-
-``` bash
+```bash
 FileNotFoundError: [WinError 2] The system cannot find the file specified
 ```
 
-A solution is to issue the following command in the anaconda prompt:
+run the following in the Miniforge Prompt, with the environment active:
 
-``` bash
- python -m ipykernel install --user
+```bash
+python -m ipykernel install --user
 ```
