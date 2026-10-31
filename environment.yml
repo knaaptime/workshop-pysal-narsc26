@@ -39,6 +39,7 @@ dependencies:
   - watermark
   - pip:
       - jax
+      - equinox
       - sparsax
       - augax
       # pinned to neighbayes==0.1.0 at release
