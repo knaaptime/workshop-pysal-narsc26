@@ -1,19 +1,7 @@
-#### 1
+graph_rook = Graph.build_contiguity(chi).transform("r")
 
-results = {}
+model_rook = SAR(formula="ypll ~ Blk14P + Hisp14P + HIS_ct", data=chi, W=graph_rook)
+model_rook.fit(draws=1000, tune=1000, chains=4, random_seed=42)
 
-for county in scag.county.unique():
-    results[county] = MultiInfoTheory(scag[scag.county == county], pop_groups).statistic
-    print(f"{county} information theory index: {results[county]:.3f}")
-
-
-#### 2
-
-rside_gini = Gini(scag[scag.county == "Riverside"], "n_hispanic_persons", "n_total_pop")
-vent_gini = Gini(scag[scag.county == "Ventura"], "n_hispanic_persons", "n_total_pop")
-
-print(f"\nRiverside Gini: {rside_gini.statistic:.3f}")
-print(f"Ventura Gini: {vent_gini.statistic:.3f}")
-ginitest = TwoValueTest(rside_gini, vent_gini)
-print(f"p value of the difference: {ginitest.p_value}")
-ginitest.plot()
+# rho moves from about 0.12 to about 0.15, less than half a posterior standard deviation
+model_rook.summary(var_names=["rho"], round_to=3)

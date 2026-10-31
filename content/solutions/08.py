@@ -1,8 +1,8 @@
-graph_knn = Graph.build_knn(chi.representative_point(), k=6).transform("r")
+from neighbayes.models import SDEM
 
-ols_knn = OLS(formula=formula, data=chi, W=graph_knn)
-ols_knn.fit(**fit_kwargs)
+sdem = SDEM(formula=formula, data=chi, W=graph)
+sdem.fit(**fit_kwargs)
 
-# the robust tests again fail to separate the lag from the error, and the tree again picks the lag
-print(ols_knn.spatial_diagnostics())
-ols_knn.spatial_diagnostics_decision()
+# the error process does not enter the effects, so SDEM's effects are SLX's,
+# and all three models agree once the neighbors' covariates are in
+sdem.impacts()

@@ -1,8 +1,15 @@
-from neighbayes.models import SDEM
+results = {}
+for outcome in ["y1", "y2", "y3"]:
+    model = SARProbit(formula=formula.replace("y1", outcome), data=katrina, W=graph)
+    model.fit(**fit_kwargs)
+    effects = model.impacts(scale="probability")
+    results[outcome] = {
+        "rho": model.summary(var_names=["rho"])["mean"].iloc[0],
+        "flood direct": effects.loc["flood_dpth", "direct"],
+        "flood indirect": effects.loc["flood_dpth", "indirect"],
+        "flood total": effects.loc["flood_dpth", "total"],
+    }
 
-sdem = SDEM(formula=formula, data=chi, W=graph)
-sdem.fit(**fit_kwargs)
-
-# the error process does not enter the effects, so SDEM's effects are SLX's,
-# and all three models agree once the neighbors' covariates are in
-sdem.impacts()
+# as time passes, rho rises and the direct effect of flooding fades, while its
+# indirect effect holds steady: a growing share of the flood's damage runs through neighbors
+pd.DataFrame(results).round(3)
