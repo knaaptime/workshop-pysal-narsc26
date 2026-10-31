@@ -1,6 +1,4 @@
-counter = 0
-for i, neighbor in enumerate(knn8_bad.neighbors):
+knn_degrees = Graph.build_knn(df.centroid.to_crs(4326), k=8)
 
-    if not set(knn8_bad.neighbors[neighbor]) == set(knn8.neighbors[neighbor]):
-                                      counter +=1
-print(f" {counter} ({np.round(len(knn8_bad.neighbors)/counter, 3)}%) of the tracts have incorrect neighbors")
+changed = [i for i in df.index if set(knn[i].index) != set(knn_degrees[i].index)]
+print(f"{len(changed)} tracts ({len(changed) / knn.n:.0%}) get a different neighbor set from coordinates in degrees")
