@@ -22,7 +22,7 @@ rside = scag[scag.geoid.str[:5] == '06065']
 rside['affprop'] = AffinityPropagation(damping=0.8, preference=-100,).fit(scaler.fit_transform(rside[columns])).labels_
 print(f'There are {len(rside.affprop.unique())} unique clusters in Riverside')
 
-print(f"The average home price in cluster 3 is ${rside.groupby('affprop').mean()['median_home_value'][3].astype(int)}")
+print(f"The average home price in cluster 3 is ${rside.groupby('affprop')['median_home_value'].mean()[3].astype(int)}")
 
 ##### 3)
 
