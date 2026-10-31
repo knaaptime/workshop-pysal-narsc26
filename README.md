@@ -23,7 +23,7 @@ North American Regional Science Council, Philadelphia, November 11, 2026
 
 1. Spatial Data Analysis
    * geoprocessing and visualization (`00_geoprocessing`, `01_geovisualization`)
-   * spatial graphs (`02_spatial_weights`, `03_weights_disparities`)
+   * spatial graphs (`02_spatial_weights`)
    * spatial autocorrelation (`04_spatial_autocorrelation`)
 
 2. Spatial Segmentation
