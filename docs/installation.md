@@ -10,7 +10,7 @@ The environment needs conda. A pip-only installation will not work, because one 
 
 ### Building the environment
 
-1. Install [Miniforge](https://conda-forge.org/download/), a small conda installer that uses the conda-forge channel. If you already have Anaconda or Miniconda, it will work too; the environment file does not use Anaconda's default channel.
+1. Install [Miniforge](https://conda-forge.org/download/), a small conda installer that uses the conda-forge channel. If you already have Anaconda or Miniconda, they may work too, but we test the environment only with Miniforge.
 
 2. Get the workshop materials, either with git,
 

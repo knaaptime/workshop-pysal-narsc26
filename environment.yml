@@ -1,7 +1,6 @@
 name: workshop-pysal-narsc26
 channels:
   - conda-forge
-  - nodefaults
 dependencies:
   - python=3.14
   - pip

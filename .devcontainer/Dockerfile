@@ -4,6 +4,10 @@ FROM mcr.microsoft.com/devcontainers/miniconda:latest
 ARG NODE_VERSION="none"
 RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
+# Use conda-forge alone, as Miniforge does, rather than the image's defaults channel.
+RUN /opt/conda/bin/conda config --system --add channels conda-forge \
+    && (/opt/conda/bin/conda config --system --remove channels defaults || true)
+
 # Build the workshop environment as its own named environment, leaving base alone:
 # the workshop's Python is newer than the image's, and replacing base's Python breaks conda.
 # Copy "noop.txt" too so the COPY instruction does not fail if no environment.yml exists.
