@@ -36,10 +36,9 @@ dependencies:
   - jupyterlab
   - nbconvert
   - watermark
+  - jax
+  - equinox
+  - sparsax
   - pip:
-      - jax
-      - equinox
-      - sparsax
       - augax
-      # pinned to neighbayes==0.1.0 at release
-      - neighbayes @ git+https://github.com/knaaptime/neighbayes@glossary-renames
+      - neighbayes
