@@ -36,9 +36,10 @@ dependencies:
   - jupyterlab
   - nbconvert
   - watermark
-  - jax
-  - equinox
-  - sparsax
+
   - pip:
       - augax
       - neighbayes
+      - jax
+      - equinox
+      - sparsax

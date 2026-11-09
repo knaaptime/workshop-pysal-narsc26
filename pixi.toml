@@ -1,0 +1,47 @@
+[workspace]
+channels = ['conda-forge']
+name = "workshop-pysal-narsc26"
+platforms = ['osx-arm64', 'win-64', 'linux-64']
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.14.*"
+pip = "*"
+contextily = "*"
+esda = "*"
+folium = "*"
+geopandas = "*"
+geoviews = "*"
+giddy = "*"
+hvplot = "*"
+libpysal = ">=4.15"
+mapclassify = "*"
+matplotlib = "*"
+networkx = "*"
+pyarrow = "*"
+scikit-learn = "*"
+seaborn = "*"
+segregation = "*"
+shapely = "*"
+spopt = "*"
+arviz = "*"
+formulaic = "*"
+lazy_loader = "*"
+polyagamma = "*"
+pymc = ">=6.3"
+python-graphviz = "*"
+scikit-sparse = ">=0.5"
+suitesparse = "*"
+ipywidgets = "*"
+jupyterlab = "*"
+nbconvert = "*"
+watermark = "*"
+
+[pypi-dependencies]
+augax = "*"
+neighbayes = "*"
+jax = "*"
+equinox = "*"
+sparsax = "*"
