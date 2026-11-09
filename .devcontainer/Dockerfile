@@ -14,7 +14,7 @@ RUN /opt/conda/bin/conda config --system --add channels conda-forge \
 COPY environment.yml* .devcontainer/noop.txt /tmp/conda-tmp/
 RUN if [ -f "/tmp/conda-tmp/environment.yml" ]; then umask 0002 && /opt/conda/bin/conda env create -f /tmp/conda-tmp/environment.yml; fi \
     && rm -rf /tmp/conda-tmp \
-    && echo "conda activate workshop-pysal-narsc26" >> /home/vscode/.bashrc
+    && echo ". /opt/conda/etc/profile.d/conda.sh && conda activate workshop-pysal-narsc26" >> /home/vscode/.bashrc
 
 # [Optional] Uncomment to install a different version of Python than the default
 # RUN conda install -y python=3.6 \
